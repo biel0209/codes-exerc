@@ -96,4 +96,31 @@ int main(){
     return 0;
 }
 
- 
+// ----------------------------------------------------------------------------------------------QUESTÃO 3
+
+#include <stdio.h>
+#include <math.h>
+#define n 3
+
+double VolumeEsfera(double r)
+{
+    return (4*3.1416*pow(r, 3))/3.0;
+}
+
+double main()
+{
+    double vr[n];
+    int i;
+    double r;
+
+    for (i=0; i<n; i++){
+        scanf("%lf", &vr[i]);
+    }
+
+    for (i=0; i<n; i++){
+        printf("%.2lf\n", VolumeEsfera(vr[i]));
+    }
+
+    return 0;
+}
+
