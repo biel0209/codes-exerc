@@ -1,0 +1,74 @@
+// ----------------------------------------------------------------------------------------------QUESTÃO 1
+
+#include <stdio.h>
+#include <math.h>
+
+float calcDist(float x1,float y1, float x2, float y2){
+    return sqrt(pow(x2-x1,2)+pow(y2-y1,2));
+}
+
+void detQuad (float x1, float y1){
+    if (x1>0 && y1>0){
+        printf("quadrante 1\n");
+    }else if (x1<0 && y1<0){
+        printf("quadrante 3\n");
+    }else if (x1>0 && y1<0){
+        printf("quadrante 4\n");
+    }else if (x1<0 && y1>0){
+        printf("quadrante 2\n");
+    }else if (x1==0 && y1>0){
+        printf("eixo y positivo\n");
+    }else if (x1==0 && y1<0){
+        printf("eixo y negativo\n");
+    }else if (x1>0 && y1==0){
+        printf("eixo x positivo\n");
+    }else if (x1<0 && y1==0){
+        printf("eixo x negativo\n");
+    }else{
+        printf("origem\n");
+    }
+}
+
+
+int main() {
+    int qtd, i;
+    float maiorDist, distancia;
+    printf("Informe a quantidade de pares de coordenadas \n");
+    scanf("%d",&qtd);
+    struct cordenadas{
+        int x1;
+        int y1;
+        int x2;
+        int y2;
+    };
+
+    struct cordenadas cordenada;
+    struct cordenadas vt[qtd];
+
+
+    for (i=0; i<qtd; i++){
+        printf("Informe as coordenadas para o par %d \n",i+1);
+        scanf("%d %d %d %d", &cordenada.x1, &cordenada.y1, &cordenada.x2, &cordenada.y2);
+        vt[i] = cordenada;
+    }
+
+    maiorDist=calcDist(vt[0].x1, vt[0].y1, vt[0].x2, vt[0].y2);
+    for (i=1;i<qtd;i++){
+        distancia=calcDist(vt[i].x1, vt[i].y1, vt[i].x2, vt[i].y2);
+        if(distancia>maiorDist){
+            maiorDist=distancia;
+        }
+    }
+    printf("A maior distancia eh %f \n", maiorDist);
+
+    for(i=0; i<qtd; i++){
+        detQuad(vt[i].x1, vt[i].y1);
+        detQuad(vt[i].x2, vt[i].y2);
+    }
+
+	return 0;
+}
+
+// ----------------------------------------------------------------------------------------------QUESTÃO 2
+
+ 
