@@ -71,4 +71,29 @@ int main() {
 
 // ----------------------------------------------------------------------------------------------QUESTÃO 2
 
+#include <stdio.h>
+#include <math.h>
+
+void imprime(int a)
+{
+    int j = a;
+    while (j != 0){
+        for (int i = 1; i <= j; i++){
+            printf("%d", j);
+            if (i != j){
+	         printf("-");    
+            }
+        printf("\n");
+        j--;
+    }
+    printf("\n");
+}
+
+int main(){
+    int a;
+    scanf("%d", &a);
+    imprime(a);
+    return 0;
+}
+
  
