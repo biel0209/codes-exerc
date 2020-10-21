@@ -124,3 +124,34 @@ double main()
     return 0;
 }
 
+// ----------------------------------------------------------------------------------------------EXTRA 1
+
+#include<stdio.h>
+#include<stdlib.h>
+
+float CalculaMulta(int *pvel){
+    float multa;
+    if(*pvel > 50)
+    {
+        if(*pvel > 50 && *pvel <= 50*10/100 + 50){
+            multa = 230;
+        }else if(*pvel > 50 && *pvel <= 50*20/100 + 50){
+            multa = 340;
+        }else if(*pvel > 50 && *pvel > 50*20/100 + 50){
+            multa = (*pvel - 50) * 19.28;
+        }
+
+    }else{
+      multa = 0;
+    }
+    return multa;
+}
+
+int main()
+{
+    int veloc, *pvel;
+    scanf("%d", &veloc);
+    pvel = &veloc;
+    printf("%.2f\n", CalculaMulta(pvel));
+    return 0;
+}
