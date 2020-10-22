@@ -74,27 +74,32 @@ int main() {
 #include <stdio.h>
 #include <math.h>
 
-void imprime(int a)
+void imprime(int *p)
 {
-    int j = a;
+    int j = *p;
     while (j != 0){
         for (int i = 1; i <= j; i++){
             printf("%d", j);
             if (i != j){
-	         printf("-");    
+	         printf("-");
             }
+        }
         printf("\n");
         j--;
     }
     printf("\n");
 }
 
-int main(){
-    int a;
+int main()
+{
+    int a, *p;
     scanf("%d", &a);
-    imprime(a);
+    p=&a;
+    imprime(p);
     return 0;
 }
+
+
 
 // ----------------------------------------------------------------------------------------------QUESTÃO 3
 
