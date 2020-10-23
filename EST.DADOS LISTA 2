@@ -1,1 +1,45 @@
+--------------------------------------------------------------------------------------QUESTÃO 1
+
+#include <stdio.h>
+#include <math.h>
+
+int r (int x, int y)
+{
+    return pow(3*x,2)+pow(y,2);
+}
+
+int b (int x, int y)
+{
+    return 2*(pow(x,2))+pow(5*y,2);
+}
+
+int c (int x, int y)
+{
+    return (-1)*(100*x)+pow(y,3);
+}
+
+void Ganhador (int x, int y)
+{
+    if (r(x,y)>b(x,y) && r(x,y)>c(x,y)){
+        printf("Rafael ganhou \n");
+    }else if (b(x,y)>r(x,y) && b(x,y)>c(x,y)){
+        printf("Beto ganhou \n");
+    }else if (c(x,y)>r(x,y) && c(x,y)>b(x,y)){
+        printf("Carlos ganhou \n");
+    }
+}
+
+int main()
+{
+    int qtd, vx[qtd], vy[qtd];
+    scanf("%d",&qtd);
+    for (int i=0;i<qtd;i++){
+       scanf("%d %d",&vx[i], &vy[i]);
+    }
+    for (int i=0;i<qtd;i++){
+       Ganhador(vx[i],vy[i]);
+    }
+
+    return(0);
+}
 
